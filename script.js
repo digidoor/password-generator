@@ -7,7 +7,9 @@ var special = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~0123456789";
 
 // Write password to the #password input
 function writePassword() {
+	var number = parseInt( prompt("pick a number or something") );
 	var password = generatePassword();
+	password += number;
 	var passwordText = document.querySelector("#password");
 
 	passwordText.value = password;
