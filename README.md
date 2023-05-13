@@ -6,3 +6,7 @@ This uses prompts. The user is asked:
 - Should it include lowercase letters?
 - Uppercase?
 - Special symbols?
+
+# Here's what it looks like:
+![screenshot](password-gen.png?raw=true "demo")
+
