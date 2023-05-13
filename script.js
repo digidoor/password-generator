@@ -8,9 +8,7 @@ const special = " !\"#$%&'()*+,-./:;<=>?@[\]^_`{|}~";
 // Write password to the #password input
 function writePassword() {
 	var choices = getChoices();
-	//var number = parseInt( prompt("pick a number or something") );
 	var password = generatePassword(choices);
-	//password += choices;
 	var passwordText = document.querySelector("#password");
 
 	passwordText.value = password;
@@ -51,7 +49,6 @@ function generatePassword(userChoices)
 	while( password.length < userChoices.length )
 		password += passwordChars[Math.floor( Math.random()*passwordChars.length )];
 	return password;
-	//return "password" + userChoices;
 }
 function determineRange(userChoices)
 {
