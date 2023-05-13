@@ -18,7 +18,7 @@ function writePassword() {
 }
 function getChoices()
 {
-	var length = parseInt( prompt("How long?") );
+	var length = parseInt( prompt("How long do you want the password to be?") );
 	while( length > 128 || length < 8 )
 	{
 		alert("Between 8 and 128, my dude.");
@@ -39,7 +39,18 @@ function getChoices()
 function generatePassword(userChoices)
 {
 	var passwordChars = determineRange(userChoices);
-	return passwordChars;
+	var password = "";
+	if(userChoices.lower)
+		password += lowercase[Math.floor( Math.random()*lowercase.length )];
+	if(userChoices.upper)
+		password += uppercase[Math.floor( Math.random()*uppercase.length )];
+	if(userChoices.numeric)
+		password += numeric[Math.floor( Math.random()*numeric.length )];
+	if(userChoices.special)
+		password += special[Math.floor( Math.random()*special.length )];
+	while( password.length < userChoices.length )
+		password += passwordChars[Math.floor( Math.random()*passwordChars.length )];
+	return password;
 	//return "password" + userChoices;
 }
 function determineRange(userChoices)
